@@ -1,3 +1,5 @@
+//preity singh
+//the node class!
 public class Node<E> {
     private Node<E> child;
     private E data;
