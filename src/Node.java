@@ -1,5 +1,4 @@
 public class Node<E> {
-    private Node<E> parent;
     private Node<E> child;
     private E data;
 
@@ -12,10 +11,9 @@ public class Node<E> {
         this.data = data;
     }
 
-    public Node(E data, Node<E> child, Node<E> parent){
+    public Node(E data, Node<E> child){
         //constructor with three parameters for data, parent Node, and child Node
         this.data = data;
-        this.parent = parent;
         this.child = child;
     }
 
@@ -30,10 +28,6 @@ public class Node<E> {
         return child;
     }
 
-    public Node<E> getParent() {
-        //returns parent Node
-        return parent;
-    }
 
     //mutators
     public void setChild(Node<E> child) {
@@ -45,10 +39,6 @@ public class Node<E> {
         this.data = data;
     }
 
-    public void setParent(Node<E> parent) {
-        //changes instance Node parent to specified Node
-        this.parent = parent;
-    }
 
     //other
 
