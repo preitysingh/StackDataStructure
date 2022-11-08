@@ -1,29 +1,43 @@
-import java.util.Stack;
 //preity singh
 //11-4-22
-//my Stack class! 
+//my Stack class!
 public class stackDataStructure <E>{
 
-    private int size= 0;
-    private Node top =  null;
+    private int size= 0; //size
+    private Node<E> top =  null; //the current top node at the top of the stack
 
+    public stackDataStructure(){
+        //empty constructor
+    }
 
-    public void push(E data)   {
+    public Node<E> push(E data)   {
         //the push method adds a new element on top of the stack
+        top = new Node<E>(data,top);
+        //size++;
+        return top;
     }
     public  E pop() {
         //the pop method removes and return the top element
-        E data = (E) top.getData();
-        top  = top.getChild();
+        E data = null;
+
+        if(isEmpty()){
+            return null;
+        } else {
+            data = top.getData();
+            Node<E> oldData = top;
+            top  = oldData.getChild();
+            oldData.setChild(null);
+            //size--;
+        }
         return data;
     }
-
 
     public boolean isEmpty(){
         //check to see if this stack is empty
         return top == null;
     }
 
+    //diff
     public int size() {
         //size methods returns the size of the stack, pretty self-explanatory
         int counter = 1;
@@ -44,7 +58,7 @@ public class stackDataStructure <E>{
         if (isEmpty()){
             return null;
         } else {
-            return (E) top.getData();
+            return top.getData();
         }
     }
 }
