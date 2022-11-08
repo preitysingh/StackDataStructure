@@ -34,8 +34,7 @@ public class stackDataStructure <E>{
         //check to see if this stack is empty
         return top == null;
     }
-
-    //diff
+    
     public int size() {
         //size methods returns the size of the stack, pretty self-explanatory
         int counter = 1;
